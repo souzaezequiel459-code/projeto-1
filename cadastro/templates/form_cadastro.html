@@ -1,24 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <title>Novo Cadastro</title>
+    <meta charset="UTF-8">
+    <title>Cadastro Profissional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Espaçamento entre os campos */
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #a72837;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Cadastrar Novo Cliente</h1>
+    <div class="card">
+        <h2>Novo Cliente</h2>
+        <form method="POST">
+            {% csrf_token %}
 
-    <form method="POST">
-        {% csrf_token %}
-
-        <label>Nome:</label><br>
-        <input type="text" name="nome" required><br><br>
-
-        <label>E-mail:</label><br>
-        <input type="email" name="email" required><br><br>
-
-        <button type="submit">Enviar Cadastro</button>
-    </form>
+            {{ form.as_p }} <button type="submit">Cadastre-se</button> 
+        </form>
+    </div>
 </body>
 
 </html>
+
+
+
+
+
+
